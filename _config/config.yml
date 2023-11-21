@@ -10,7 +10,3 @@ Name: goldfinch-shortcode
 #   HTMLVarchar:
 #     properties:
 #       ProcessShortcodes: true
-
-SilverStripe\CMS\Model\SiteTree:
-  extensions:
-    - Goldfinch\Shortcode\Extensions\ShortcodeSiteTreeExtension

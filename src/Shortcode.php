@@ -1,12 +1,11 @@
 <?php
 
-namespace Goldfinch\Shortcode\Extensions;
+namespace Goldfinch\Shortcode;
 
-use SilverStripe\CMS\Model\SiteTreeExtension;
 use SilverStripe\View\ArrayData;
 use SilverStripe\CMS\Model\SiteTree;
 
-class ShortcodeSiteTreeExtension extends SiteTreeExtension
+class Shortcode extends SiteTree
 {
     private static $db = [];
 

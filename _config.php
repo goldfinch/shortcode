@@ -1,7 +1,7 @@
 <?php
 
+use Goldfinch\Shortcode\Shortcode;
 use SilverStripe\View\Parsers\ShortcodeParser;
-use SilverStripe\CMS\Model\SiteTree;
 
 $dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';
 $files = scandir($dir);
@@ -14,7 +14,7 @@ if (count($files))
         {
             $name = substr($file, 0, -3);
 
-            ShortcodeParser::get('default')->register($name, [SiteTree::class, 'sc_dynamic']);
+            ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
         }
     }
 }
