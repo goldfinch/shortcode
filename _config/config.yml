@@ -1,3 +1,16 @@
 ---
 Name: goldfinch-shortcode
 ---
+
+# SilverStripe\ORM\FieldType\DBString:
+#   extensions:
+#     - App\Extensions\DBShortcode
+
+# SilverStripe\Core\Injector\Injector:
+#   HTMLVarchar:
+#     properties:
+#       ProcessShortcodes: true
+
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - Goldfinch\Shortcode\Extensions\ShortcodeSiteTreeExtension
