@@ -6,15 +6,18 @@ use SilverStripe\View\Parsers\ShortcodeParser;
 $dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';
 $files = scandir($dir);
 
-if (count($files))
+if (is_dir($dir))
 {
-    foreach($files as $file)
+    if (count($files))
     {
-        if (substr($file, -3) == '.ss')
+        foreach($files as $file)
         {
-            $name = substr($file, 0, -3);
+            if (substr($file, -3) == '.ss')
+            {
+                $name = substr($file, 0, -3);
 
-            ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+                ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+            }
         }
     }
 }
