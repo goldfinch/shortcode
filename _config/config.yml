@@ -3,14 +3,7 @@ Name: goldfinch-shortcode
 ---
 
 SilverStripe\Core\Injector\Injector:
-  HTMLVarchar:
+  SCVarchar:
     properties:
       ProcessShortcodes: true
-
-# SilverStripe\ORM\FieldType\DBString:
-#   extensions:
-#     - App\Extensions\DBShortcode
-
-SilverStripe\Core\Injector\Injector:
-  SCVarchar:
     class: Goldfinch\Shortcode\ORM\FieldType\DBSCVarchar
