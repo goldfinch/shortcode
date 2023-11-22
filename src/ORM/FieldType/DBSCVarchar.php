@@ -7,6 +7,8 @@ use SilverStripe\ORM\FieldType\DBHTMLVarchar;
 
 class DBSCVarchar extends DBHTMLVarchar
 {
+    protected $processShortcodes = true;
+
     public function scaffoldFormField($title = null, $params = null)
     {
         return TextField::create($this->name, $title);

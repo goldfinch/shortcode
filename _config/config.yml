@@ -4,6 +4,4 @@ Name: goldfinch-shortcode
 
 SilverStripe\Core\Injector\Injector:
   SCVarchar:
-    properties:
-      ProcessShortcodes: true
     class: Goldfinch\Shortcode\ORM\FieldType\DBSCVarchar
