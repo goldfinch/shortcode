@@ -17,10 +17,11 @@ else
     // initial approach (this could slow the rendering)
 
     // $dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';
-    // $files = scandir($dir);
 
     // if (is_dir($dir))
     // {
+    //     $files = scandir($dir);
+
     //     if (count($files))
     //     {
     //         foreach($files as $file)
