@@ -18,7 +18,7 @@ hr.ss
 ```
 
 
-1) Auto scan dir /templates/Shortcodes/*.ss (if no allow_shortcodes property defined)
+1) (!COMMENTED OUT in _config.php) Auto scan dir /templates/Shortcodes/*.ss (if no allow_shortcodes property defined)
 
 2) More common (optimized approach)
 
