@@ -3,20 +3,34 @@
 use Goldfinch\Shortcode\Shortcode;
 use SilverStripe\View\Parsers\ShortcodeParser;
 
-$dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';
-$files = scandir($dir);
+$cfg = ss_config(Shortcode::class, 'allow_shortcodes');
 
-if (is_dir($dir))
+if ($cfg && !empty($cfg))
 {
-    if (count($files))
+    foreach($cfg as $name)
     {
-        foreach($files as $file)
-        {
-            if (substr($file, -3) == '.ss')
-            {
-                $name = substr($file, 0, -3);
+        ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+    }
+}
+else
+{
+    // initial approach (this could slow the rendering)
 
-                ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+    $dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';
+    $files = scandir($dir);
+
+    if (is_dir($dir))
+    {
+        if (count($files))
+        {
+            foreach($files as $file)
+            {
+                if (substr($file, -3) == '.ss')
+                {
+                    $name = substr($file, 0, -3);
+
+                    ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+                }
             }
         }
     }

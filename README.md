@@ -16,3 +16,18 @@ hr.ss
 [hh] .. [hh][/hh]
 [hr]
 ```
+
+
+1) Auto scan dir /templates/Shortcodes/*.ss (if no allow_shortcodes property defined)
+
+2) More common (optimized approach)
+
+app/_config/shortcodes.yml
+```
+---
+Name: app-shortcodes
+---
+Goldfinch\Shortcode\Shortcode:
+  allow_shortcodes:
+    hh
+```
