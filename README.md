@@ -29,5 +29,5 @@ Name: app-shortcodes
 ---
 Goldfinch\Shortcode\Shortcode:
   allow_shortcodes:
-    hh
+    - hh
 ```
