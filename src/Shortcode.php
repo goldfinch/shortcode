@@ -12,25 +12,25 @@ class Shortcode extends SiteTree
     private static $has_one = [];
 
     private static $casting = [
-        'sc_dynamic' => 'HTMLText'
+        'sc_dynamic' => 'HTMLText',
     ];
 
-    public static function sc_dynamic($arguments, $content = null, $parser = null, $tagName = null)
-    {
+    public static function sc_dynamic(
+        $arguments,
+        $content = null,
+        $parser = null,
+        $tagName = null,
+    ) {
         $sctheme = 'Shortcodes/' . $tagName;
 
         $data = ArrayData::create(['content' => $content]);
 
-        if (ss_theme_template_file_exists($sctheme))
-        {
+        if (ss_theme_template_file_exists($sctheme)) {
             return $data->renderWith($sctheme);
-        }
-        else
-        {
-            $sctheme .=  '-' . $tagName;
+        } else {
+            $sctheme .= '-' . $tagName;
 
-            if (ss_theme_template_file_exists($sctheme))
-            {
+            if (ss_theme_template_file_exists($sctheme)) {
                 return $data->renderWith($sctheme);
             }
         }

@@ -5,15 +5,14 @@ use SilverStripe\View\Parsers\ShortcodeParser;
 
 $cfg = ss_config(Shortcode::class, 'allow_shortcodes');
 
-if ($cfg && !empty($cfg))
-{
-    foreach($cfg as $name)
-    {
-        ShortcodeParser::get('default')->register($name, [Shortcode::class, 'sc_dynamic']);
+if ($cfg && !empty($cfg)) {
+    foreach ($cfg as $name) {
+        ShortcodeParser::get('default')->register($name, [
+            Shortcode::class,
+            'sc_dynamic',
+        ]);
     }
-}
-else
-{
+} else {
     // initial approach (this could slow the rendering)
 
     // $dir = THEMES_PATH . '/' . ss_theme() . '/templates/Shortcodes/';

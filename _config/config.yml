@@ -1,7 +1,6 @@
 ---
 Name: goldfinch-shortcode
 ---
-
 SilverStripe\Core\Injector\Injector:
   SCVarchar:
     properties:
