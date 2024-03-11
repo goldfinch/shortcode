@@ -1,8 +1,8 @@
 {
     "name": "goldfinch/shortcode",
-    "description": "",
+    "description": "A quick way to create custom shortcodes in Silverstripe",
     "type": "silverstripe-vendormodule",
-    "keywords": ["silverstripe"],
+    "keywords": ["silverstripe", "shortcode", "silverstripe-shortcode"],
     "license": "MIT",
     "authors": [
         {
