@@ -6,7 +6,7 @@ use SilverStripe\View\Parsers\ShortcodeParser;
 $cfg = ss_config(Shortcode::class, 'allow_shortcodes');
 
 if ($cfg && !empty($cfg)) {
-    foreach ($cfg as $name) {
+    foreach ($cfg as $name => $sc) {
         ShortcodeParser::get('default')->register($name, [
             Shortcode::class,
             'sc_dynamic',

@@ -38,17 +38,7 @@ php taz make:shortcode st
 
 #### 2. Edit templates
 
-Taz registered our shortcodes for us and created templates `hr.ss` and `st.ss` stored in `our_theme/templates/Shortcodes/`. We can update them:
-
-```html
-<!-- hr.ss -->
-<hr>
-```
-
-```html
-<!-- st.ss -->
-<strong>$content</strong>
-```
+Taz registered our shortcodes for us and created templates `hr.ss` and `st.ss` stored in `our_theme/templates/Shortcodes/`. We can update them as needed.
 
 #### 3. Set DB type
 
