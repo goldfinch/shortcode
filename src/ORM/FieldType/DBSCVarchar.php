@@ -32,9 +32,12 @@ class DBSCVarchar extends DBHTMLVarchar
             setTimeout(() => jQuery(e).animate({top: 0}, 0).animate({opacity: 1}, 250), 500)
         })(this)"';
 
-        foreach ($cfg as $tag => $options) {
+        if (isset($cfg)) {
 
-            $description .= '<div><span style="color: var(--bs-cyan); cursor: pointer; position: relative" title="Click to copy"'.$onclick.'>'.($options['self_closing'] ? '<strong'.$onclick.' style="font-weight: bold">['.$tag.']</strong>' : '<strong style="font-weight: bold">['.$tag.']</strong><span style="color: #a3a3a3; font-style: italic; padding: 0 3px">text</span><strong style="font-weight: bold">[/'.$tag.']</strong>').'</span> - <span style="color: #a3a3a3">'.$options['description'].'</span></div>';
+            foreach ($cfg as $tag => $options) {
+
+                $description .= '<div><span style="color: var(--bs-cyan); cursor: pointer; position: relative" title="Click to copy"'.$onclick.'>'.($options['self_closing'] ? '<strong'.$onclick.' style="font-weight: bold">['.$tag.']</strong>' : '<strong style="font-weight: bold">['.$tag.']</strong><span style="color: #a3a3a3; font-style: italic; padding: 0 3px">text</span><strong style="font-weight: bold">[/'.$tag.']</strong>').'</span> - <span style="color: #a3a3a3">'.$options['description'].'</span></div>';
+            }
         }
 
         return '<span style="display: flex; justify-content: space-between"><span>Available shortcodes:</span><span style="color: #a3a3a3; font-size: 11px; font-style: italic">click to copy</span></span><div style="margin-top: 10px;background-color: #fdfdfd;border: 1px solid #eee;border-radius: var(--bs-border-radius);padding: 5px 10px;">'.$description.'</div>';
