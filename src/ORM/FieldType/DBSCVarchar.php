@@ -40,6 +40,6 @@ class DBSCVarchar extends DBHTMLVarchar
             }
         }
 
-        return '<span style="display: flex; justify-content: space-between"><span>Available shortcodes:</span><span style="color: #a3a3a3; font-size: 11px; font-style: italic">click to copy</span></span><div style="margin-top: 10px;background-color: #fdfdfd;border: 1px solid #eee;border-radius: var(--bs-border-radius);padding: 5px 10px;">'.$description.'</div>';
+        return $description != '' ? '<span style="display: flex; justify-content: space-between"><span>Available shortcodes:</span><span style="color: #a3a3a3; font-size: 11px; font-style: italic">click to copy</span></span><div style="margin-top: 10px;background-color: #fdfdfd;border: 1px solid #eee;border-radius: var(--bs-border-radius);padding: 5px 10px;">'.$description.'</div>' : '';
     }
 }
