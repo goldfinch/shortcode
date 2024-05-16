@@ -28,12 +28,7 @@ class ShortcodeTemplateMakeCommand extends GeneratorCommand
     {
         parent::configure();
 
-        $this->addOption(
-            'selfclosing',
-            null,
-            InputOption::VALUE_OPTIONAL,
-            'Self closing tag'
-        );
+        $this->addOption('selfclosing', null, InputOption::VALUE_OPTIONAL, 'Self closing tag');
     }
 
     protected function execute($input, $output): int
@@ -46,10 +41,7 @@ class ShortcodeTemplateMakeCommand extends GeneratorCommand
             $sctYes = 'yes (for [hr], [br], etc.)';
             $sctNo = 'no (for [sp]text[/sp], etc.)';
             $helper = $this->getHelper('question');
-            $question = new ChoiceQuestion(
-                'Self closing tag?',
-                [$sctNo, $sctYes]
-            );
+            $question = new ChoiceQuestion('Self closing tag?', [$sctNo, $sctYes]);
             $question->setErrorMessage('The selection %s is invalid.');
             $selfClosingTag = $helper->ask($input, $output, $question);
 
@@ -71,8 +63,6 @@ class ShortcodeTemplateMakeCommand extends GeneratorCommand
             $template = '<strong>$content</strong>';
         }
 
-        return [
-            [true, '{{ __template }}', $template],
-        ];
+        return [[true, '{{ __template }}', $template]];
     }
 }
